@@ -32,15 +32,16 @@
     /* outline: none; */
 }
 
-/* .form-control:focus {
-    border-color: #28a745;
-        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-} */
-
 #search-form-1:focus {
-    border-left-color: transparent !important;
-    border-color: #28a745;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    /* border-left-color: transparent !important; */
+    /* border-color: #28a745; */
+    /* box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); */
+    outline: none !important;
+    border-color: #00AA5B;
+}
+
+#border-focus {
+    border-color: #00AA5B;
 }
 
 .border-icon {
