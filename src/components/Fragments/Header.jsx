@@ -5,18 +5,14 @@ import { Icon } from "../Elements/Icon/Icon";
 const Header = () => {
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBluer = () => {
-    setIsFocused(false);
+  const focusHandler = () => {
+    setIsFocused(prevState => !prevState)
   };
 
   return (
     <div className="d-flex">
       <img
-        src="/public/images/logo_tokped.svg"
+        src="/images/logo_tokped.svg"
         alt="tokopedia-logo"
         id="img-tokped"
       />
@@ -36,8 +32,8 @@ const Header = () => {
           type="text"
           className="w-100 form-control search-form shadow-none"
           placeholder="Cari di Tokopedia"
-          onFocus={handleFocus}
-          onBlur={handleBluer}
+          onFocus={focusHandler}
+          onBlur={focusHandler}
         />
       </div>
       {/* </div> */}
