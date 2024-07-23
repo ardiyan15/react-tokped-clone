@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #F0F3F7;
+    height: 40px;
+}
+
+.navbar-font {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+div ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+div ul li a:hover {
+    color: #00AA5B;
+}

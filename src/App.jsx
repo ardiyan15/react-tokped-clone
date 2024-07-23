@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="">
       <Home />
-      <button className="btn btn-primary">Test</button>
     </div>
   );
 }
