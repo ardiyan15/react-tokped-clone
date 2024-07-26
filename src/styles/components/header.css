@@ -95,3 +95,7 @@
     width: 100%;
     border-top: none;
 }
+
+.carousel-inner {
+    border-radius: 15px;
+}
