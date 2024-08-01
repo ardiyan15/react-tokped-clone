@@ -1,11 +1,14 @@
 import { useState } from "react";
 import "../../styles/components/header.css";
-import { Icon } from "../Elements/Icon/Icon";
+import { Icon } from "../Elements/Icon/Icon"
+import Button from '../Elements/Button/Index'
+import Input from '../Elements/Input/Index'
 
 const Header = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   const focusHandler = () => {
+    console.log('trigger')
     setIsFocused((prevState) => !prevState);
   };
 
@@ -32,14 +35,15 @@ const Header = () => {
                   size={20}
                 />
               </div>
-              <input
+              {/* <input
                 id="search-form"
                 type="text"
                 className="w-100 form-control search-form shadow-none"
                 placeholder="Cari di Tokopedia"
                 onFocus={focusHandler}
                 onBlur={focusHandler}
-              />
+              /> */}
+              <Input id="search-form" onFocus={focusHandler} onBlur={focusHandler}/>
               <div className="cart-container d-flex justify-content-center">
                 <Icon className="align-self-center" iconName="Cart" size={25} />
               </div>
@@ -64,10 +68,10 @@ const Header = () => {
             <div className="d-flex flex-column">
               <div className="row">
                 <div className="col-md-6">
-                  <button className="btn btn-secondary">Masuk</button>
+                  <Button classname="btn btn-secondary">Masuk</Button>
                 </div>
                 <div className="col-md-6">
-                  <button className="btn btn-primary">Daftar</button>
+                  <Button classname="btn btn-primary">Daftar</Button>
                 </div>
               </div>
               <div className="d-flex mt-4">
