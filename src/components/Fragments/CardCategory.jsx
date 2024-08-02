@@ -8,55 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import '../../styles/components/fragments/cardcategory.css'
 
 const CardCategory = () => {
-  const scrollContainerRef = useRef(null);
-
-  // const handleScrollLeft = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft -= 50;
-  //   }
-  // };
-  
-  // const handleScrollRight = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft += 50;
-  //   }
-  // };
-
-  const smoothScroll = (element, target, duration) => {
-    const start = element.scrollLeft;
-    const change = target - start;
-    let startTime = null;
-
-    const animateScroll = (currentTime) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, start, change, duration);
-      element.scrollLeft = run;
-      if (timeElapsed < duration) requestAnimationFrame(animateScroll);
-    };
-
-    const easeInOutQuad = (t, b, c, d) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    };
-
-    requestAnimationFrame(animateScroll);
-  };
-
-  const handleScrollLeft = () => {
-    if (scrollContainerRef.current) {
-      smoothScroll(scrollContainerRef.current, scrollContainerRef.current.scrollLeft - 100, 500); // Scrolls 50px to the right over 500ms
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (scrollContainerRef.current) {
-      smoothScroll(scrollContainerRef.current, scrollContainerRef.current.scrollLeft + 100, 500);
-    }
-  };
-
   const settings = {
     // arrows: true,
     accessibility: true,
@@ -99,8 +50,6 @@ const CardCategory = () => {
                   </Slider>
                   {/* </div> */}
                 {/* </div> */}
-                  <button onClick={handleScrollLeft}>scroll left</button>
-                  <button onClick={handleScrollRight}>scroll right</button>
               </Card.Title>
             </div>
             <div className="col-md-6">

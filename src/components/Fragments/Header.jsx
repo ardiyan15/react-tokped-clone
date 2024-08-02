@@ -1,17 +1,11 @@
-import { useState } from "react";
+import { Icon } from "../Elements/Icon/Icon";
+import Button from "../Elements/Button/Index";
+import Input from "../Elements/Input/Index";
+
 import "../../styles/components/header.css";
-import { Icon } from "../Elements/Icon/Icon"
-import Button from '../Elements/Button/Index'
-import Input from '../Elements/Input/Index'
-
+import { useSelector } from "react-redux";
 const Header = () => {
-  const [isFocused, setIsFocused] = useState(false);
-
-  const focusHandler = () => {
-    console.log('trigger')
-    setIsFocused((prevState) => !prevState);
-  };
-
+  const isFocused = useSelector((state) => state.focused.status);
   return (
     <>
       <div className="d-flex">
@@ -35,15 +29,7 @@ const Header = () => {
                   size={20}
                 />
               </div>
-              {/* <input
-                id="search-form"
-                type="text"
-                className="w-100 form-control search-form shadow-none"
-                placeholder="Cari di Tokopedia"
-                onFocus={focusHandler}
-                onBlur={focusHandler}
-              /> */}
-              <Input id="search-form" onFocus={focusHandler} onBlur={focusHandler}/>
+              <Input id="search-form" />
               <div className="cart-container d-flex justify-content-center">
                 <Icon className="align-self-center" iconName="Cart" size={25} />
               </div>
@@ -99,7 +85,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <hr id="hr"/>
+      <hr id="hr" />
     </>
   );
 };

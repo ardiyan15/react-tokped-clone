@@ -1,21 +1,16 @@
-import { useState } from "react";
-const Input = (props) => {
-  const [isFocused, setIsFocused] = useState(false);
+import { useDispatch } from "react-redux";
+import { setFocus } from "../../../redux/slices/focusedSlice";
 
-//   const focusHandler = () => {
-//     setIsFocused((prevState) => !prevState);
-//   };
-
-    const { focusHandler } = props;
-    console.log(focusHandler)
+const Input = () => {
+  const dispatch = useDispatch();
   return (
     <input
       id="search-form"
       type="text"
       className="w-100 form-control search-form shadow-none"
       placeholder="Cari di Tokopedia"
-        onFocus={focusHandler}
-        onBlur={focusHandler}
+      onFocus={() => dispatch(setFocus(true))}
+      onBlur={() => dispatch(setFocus(false))}
     />
   );
 };
