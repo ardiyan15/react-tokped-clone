@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux";
 import { setFocus } from "../../../redux/slices/focusedSlice";
 
-const Input = () => {
+const Input = (props) => {
+  const {id} = props
   const dispatch = useDispatch();
   return (
     <input
-      id="search-form"
+      id={id}
       type="text"
       className="w-100 form-control search-form shadow-none"
       placeholder="Cari di Tokopedia"

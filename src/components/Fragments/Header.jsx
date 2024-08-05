@@ -14,7 +14,7 @@ const Header = () => {
           alt="tokopedia-logo"
           id="img-tokped"
         />
-        <i className="bi bi-airplane-engines-fill"></i>
+         <i className="bi bi-airplane-engines-fill"></i>
         <p id="category">Kategori</p>
         <div className="d-flex w-100">
           <div style={{ width: "78%" }}>

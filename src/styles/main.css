@@ -16,3 +16,10 @@ div ul li a {
 div ul li a:hover {
     color: #00AA5B;
 }
+
+.text-link-primary {
+    color: #00AA5B !important;
+    font-weight: bold !important;
+    text-decoration: none;
+    font-size: 20px;
+}
