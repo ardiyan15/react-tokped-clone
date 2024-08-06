@@ -175,25 +175,131 @@ const CardCategory = () => {
                 </div>
               </Card.Title>
             </div>
-            <ul className="d-flex justify-content-between list-inline">
+            <ul className="d-flex justify-content-around list-inline mt-5">
               <li>
-                <div className="d-flex justify-content-center align-items-center p-1" style={{ border: '1px solid black', borderRadius: '15px' }}>
-                <img
-                  src="icons/category.png"
-                  alt="category"
-                  style={{
-                    width: "25%",
-                  }}
-                />
-                <span style={{ fontSize: '18px', fontWeight: '500' }}>Kategori</span>
+                <div
+                  className="d-flex justify-content-center align-items-center p-1"
+                  style={{ border: "1px solid black", borderRadius: "15px" }}
+                >
+                  <img
+                    src="icons/category.png"
+                    alt="category"
+                    style={{
+                      width: "25%",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Kategori
+                  </span>
                 </div>
               </li>
-              <li>Handphone & Tablet</li>
-              <li>Top-Up & Tagihan</li>
-              <li>Elektronik</li>
-              <li>Perawatan Hewan</li>
-              <li>Travel & Entertainment</li>
-              <li>Keuangan</li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center p-1"
+                  style={{ border: "1px solid black", borderRadius: "15px" }}
+                >
+                  <img
+                    src="icons/handphone.png"
+                    alt="handphone"
+                    style={{
+                      width: "12%",
+                      marginRight: '5px'
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Handphone & Tablet
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center py-1"
+                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                >
+                  <img
+                    src="icons/top-up.png"
+                    alt="category"
+                    style={{
+                      width: "15%",
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Top-Up & Tagihan
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center py-1"
+                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                >
+                  <img
+                    src="icons/electronic.png"
+                    alt="category"
+                    style={{
+                      width: "15%",
+                      marginRight: '5px'
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Elektronik
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center py-1"
+                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                >
+                  <img
+                    src="icons/pet.png"
+                    alt="category"
+                    style={{
+                      width: "15%",
+                      marginRight: '5px'
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Perawatan Hewan
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center py-1"
+                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                >
+                  <img
+                    src="icons/travel.png"
+                    alt="category"
+                    style={{
+                      width: "13%",
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Travel & Entertainment
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="d-flex justify-content-center align-items-center py-1"
+                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                >
+                  <img
+                    src="icons/finance.png"
+                    alt="category"
+                    style={{
+                      width: "16%",
+                      marginRight: '5px'
+                    }}
+                  />
+                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    Keuangan
+                  </span>
+                </div>
+              </li>
             </ul>
           </div>
         </Card.Body>
