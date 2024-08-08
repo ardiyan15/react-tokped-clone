@@ -165,7 +165,7 @@ const CardCategory = () => {
                               <option value=""></option>
                             </select>
                           </div>
-                          <div className="col-md-2 mt-2">
+                          <div className="col-md-1 mt-2">
                             <button className="btn btn-disabled">Beli</button>
                           </div>
                         </div>
@@ -179,7 +179,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center p-1"
-                  style={{ border: "1px solid black", borderRadius: "15px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "15px" }}
                 >
                   <img
                     src="icons/category.png"
@@ -197,7 +197,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center p-1"
-                  style={{ border: "1px solid black", borderRadius: "15px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "15px" }}
                 >
                   <img
                     src="icons/handphone.png"
@@ -215,7 +215,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center py-1"
-                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "13px" }}
                 >
                   <img
                     src="icons/top-up.png"
@@ -232,7 +232,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center py-1"
-                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "13px" }}
                 >
                   <img
                     src="icons/electronic.png"
@@ -250,7 +250,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center py-1"
-                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "13px" }}
                 >
                   <img
                     src="icons/pet.png"
@@ -268,7 +268,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center py-1"
-                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "13px" }}
                 >
                   <img
                     src="icons/travel.png"
@@ -285,7 +285,7 @@ const CardCategory = () => {
               <li>
                 <div
                   className="d-flex justify-content-center align-items-center py-1"
-                  style={{ border: "1px solid black", borderRadius: "13px" }}
+                  style={{ border: "1px solid #dee2e6", borderRadius: "13px" }}
                 >
                   <img
                     src="icons/finance.png"
