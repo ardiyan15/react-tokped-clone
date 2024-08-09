@@ -52,13 +52,13 @@ const Header = () => {
           >
             <div className="pipe-separator"></div>
             <div className="d-flex flex-column">
-              <div className="row">
-                <div className="col-md-6">
-                  <Button classname="btn btn-secondary">Masuk</Button>
-                </div>
-                <div className="col-md-6">
+              <div className="d-flex">
+                {/* <div className="col-md-6"> */}
+                  <Button classname="btn btn-secondary btn-login">Masuk</Button>
+                {/* </div> */}
+                {/* <div className="col-md-6"> */}
                   <Button classname="btn btn-primary">Daftar</Button>
-                </div>
+                {/* </div> */}
               </div>
               <div className="d-flex mt-4">
                 <p className="w-100">
