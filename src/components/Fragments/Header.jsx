@@ -1,20 +1,23 @@
 import { Icon } from "../Elements/Icon/Icon";
 import Button from "../Elements/Button/Index";
 import Input from "../Elements/Input/Index";
+import HeaderProduct from "./HeaderProduct";
 
 import "../../styles/components/header.css";
 import { useSelector } from "react-redux";
 const Header = () => {
   const isFocused = useSelector((state) => state.focused.status);
+  const isScroll = useSelector((state) => state.focused.isScroll);
+
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex w-100 bg-white">
         <img
           src="/images/logo_tokped.svg"
           alt="tokopedia-logo"
           id="img-tokped"
         />
-         <i className="bi bi-airplane-engines-fill"></i>
+        <i className="bi bi-airplane-engines-fill"></i>
         <p id="category">Kategori</p>
         <div className="d-flex w-100">
           <div style={{ width: "78%" }}>
@@ -44,24 +47,20 @@ const Header = () => {
                 <li>Meja Belajar</li>
               </ul>
             </div>
+            {isScroll >= 1400 && (
+              <HeaderProduct />
+            )}
           </div>
 
-          <div
-            className="button-container mt-4 d-flex"
-            style={{ marginRight: "-15%" }}
-          >
+          <div className="mt-4 d-flex" style={{ marginRight: "-15%" }}>
             <div className="pipe-separator"></div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column button-container">
               <div className="d-flex">
-                {/* <div className="col-md-6"> */}
-                  <Button classname="btn btn-secondary btn-login">Masuk</Button>
-                {/* </div> */}
-                {/* <div className="col-md-6"> */}
-                  <Button classname="btn btn-primary">Daftar</Button>
-                {/* </div> */}
+                <Button classname="btn btn-secondary btn-login">Masuk</Button>
+                <Button classname="btn btn-primary">Daftar</Button>
               </div>
               <div className="d-flex mt-4">
-                <p className="w-100">
+                <p style={{ width: "250px" }}>
                   <Icon
                     className="align-self-center"
                     iconName="GeoAlt"

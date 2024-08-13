@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "image": "images/products/product1.jpeg",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    },
+    {
+      "image": "images/products/product2.png",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    },
+    {
+      "image": "images/products/product3.jpg",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    },
+    {
+      "image": "images/products/product4.jpg",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    },
+    {
+      "image": "images/products/product5.jpg",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    },
+    {
+      "image": "images/products/product1.jpeg",
+      "title": "Eiusmod id mollit aliqua quis laboris eiusmod sint.",
+      "price": 99999,
+      "discount": 99,
+      "store": "Jakarta Utara",
+      "rating": "5.0",
+      "sold": 999
+    }
+  ]
+}

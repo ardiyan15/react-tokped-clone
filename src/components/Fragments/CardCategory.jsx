@@ -155,7 +155,7 @@ const CardCategory = () => {
                       <div className="col-md-6">
                         <span>Nominal</span>
                         <div className="row">
-                          <div className="col-md-9">
+                          <div className="col-md-8">
                             <select
                               name=""
                               id=""

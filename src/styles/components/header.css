@@ -43,6 +43,7 @@
 }
 
 #search-form {
+    /* margin-right: 10%; */
     margin-top: 20px;
     border-left: 0px !important;
     border-top-right-radius: 10px !important;
@@ -79,17 +80,17 @@
 
 .pipe-separator {
     margin-top: 5px;
-    margin-left: -5%;
-    margin-right: 55%;
+    /* margin-left: -5%; */
+    /* margin-right: 10%; */
     width: 3px;
-    height: 40px;
-    /* background-color: #E4EBF5; */
-    background-color: red;
+    height: 30px;
+    background-color: #E4EBF5;
+    /* background-color: red; */
 }
 
 .cart-container {
-    /* margin-right: 5%; */
-    margin-left: 1%;
+    margin-right: 5%;
+    margin-left: 2%;
     margin-top: 1% !important;
     width: 55px;
     height: 60px;
@@ -112,4 +113,8 @@
 
 .btn-login {
     margin-right: 8%;
+}
+
+.button-container {
+    margin-left: 80px;
 }
