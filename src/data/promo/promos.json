@@ -1,0 +1,68 @@
+{
+  "promos": [
+    [
+      {
+        "id": 1,
+        "description": "Bebas Ongkir"
+      },
+      {
+        "id": 2,
+        "description": "Waktu Indonesia Belanja"
+      },
+      {
+        "id": 3,
+        "description": "Waktu Indonesia Belanja TV Show"
+      },
+      {
+        "id": 4,
+        "description": "Kejar Diskon"
+      }
+    ],
+    [
+      {
+        "id": 5,
+        "description": "Flash Sale"
+      },
+      {
+        "id": 6,
+        "description": "Promo Pengguna Baru"
+      },
+      {
+        "id": 7,
+        "description": "Tokopedia Nyam"
+      },
+      {
+        "id": 8,
+        "description": "Bangga Buatan Indonesia"
+      }
+    ],
+    [
+      {
+        "id": 9,
+        "description": "Tap Tap Kotak"
+      },
+      {
+        "id": 10,
+        "description": "Tokopedia Peduli Sehat"
+      },
+      {
+        "id": 11,
+        "description": "Home Living Salebration"
+      },
+      {
+        "id": 12,
+        "description": "Super Gadget Day"
+      }
+    ],
+    [
+      {
+        "id": 9,
+        "description": "Tap Tap Kotak"
+      },
+      {
+        "id": 9,
+        "description": "Tap Tap Kotak"
+      }
+    ]
+  ]
+}
