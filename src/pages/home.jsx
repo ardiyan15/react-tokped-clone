@@ -14,6 +14,7 @@ import HeaderProduct from "../components/Fragments/HeaderProduct";
 import Trend from "../components/Fragments/Trend";
 import "../styles/pages/home.css";
 import Products from "../components/Fragments/Products";
+import Footer from "../components/Fragments/Footer";
 
 const Home = () => {
   const isScroll = useSelector((state) => state.focused.isScroll);
@@ -22,12 +23,12 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       dispatch(setIsScroll(window.scrollY));
-    });  
+    });
   }, [isScroll]);
 
   return (
     <>
-      <div className={isScroll > 0 ? 'fixed-top shadow' : ''}>
+      <div className={isScroll > 0 ? "fixed-top shadow" : ""}>
         <Navbar />
         <Header />
       </div>
@@ -42,6 +43,10 @@ const Home = () => {
         <div className="content-body">
           <HeaderProduct />
           <Products />
+        </div>
+        <div className="product-footer-separator"></div>
+        <div className="content-body">
+          <Footer />
         </div>
       </div>
     </>

@@ -47,7 +47,7 @@ const Header = () => {
                 <li>Meja Belajar</li>
               </ul>
             </div>
-            {isScroll >= 1400 && (
+            {(isScroll >= 1400 && isScroll <= 1900) && (
               <HeaderProduct />
             )}
           </div>
