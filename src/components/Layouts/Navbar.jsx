@@ -1,7 +1,7 @@
 import "../../styles/main.css";
 import "../../styles/navbar.css"
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="navbar">
       <div className="row col-md-12">

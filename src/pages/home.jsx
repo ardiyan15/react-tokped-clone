@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -15,6 +15,7 @@ import "../styles/pages/home.css";
 import Products from "../components/Fragments/Products";
 import Footer from "../components/Fragments/Footer";
 
+
 const Home = () => {
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const Home = () => {
   return (
     <>
       <div className={isScroll > 0 ? "fixed-top shadow" : ""}>
-        <Navbar />
+        <Navbar test="TEst Data"/>
         <Header />
       </div>
       <div className="content-body">
