@@ -5,6 +5,7 @@ import { Icon } from "../Elements/Icon/Icon";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/components/fragments/cardcategory.css";
+import { Link } from "react-router-dom";
 // import "../../styles/main.css"
 
 const CardCategory = () => {
@@ -177,22 +178,27 @@ const CardCategory = () => {
             </div>
             <ul className="d-flex justify-content-around list-inline mt-5">
               <li>
-                <div
-                  className="d-flex justify-content-center align-items-center p-1"
-                  style={{ border: "1px solid #dee2e6", borderRadius: "15px" }}
-                >
-                  <img
-                    src="icons/category.png"
-                    alt="category"
+                <Link to="/category">
+                  <div
+                    className="d-flex justify-content-center align-items-center p-1"
                     style={{
-                      width: "25%",
-                      marginRight: "5px",
+                      border: "1px solid #dee2e6",
+                      borderRadius: "15px",
                     }}
-                  />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
-                    Kategori
-                  </span>
-                </div>
+                  >
+                    <img
+                      src="icons/category.png"
+                      alt="category"
+                      style={{
+                        width: "25%",
+                        marginRight: "5px",
+                      }}
+                    />
+                    <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                      Kategori
+                    </span>
+                  </div>
+                </Link>
               </li>
               <li>
                 <div
@@ -204,7 +210,7 @@ const CardCategory = () => {
                     alt="handphone"
                     style={{
                       width: "12%",
-                      marginRight: '5px'
+                      marginRight: "5px",
                     }}
                   />
                   <span style={{ fontSize: "18px", fontWeight: "500" }}>
@@ -239,7 +245,7 @@ const CardCategory = () => {
                     alt="category"
                     style={{
                       width: "15%",
-                      marginRight: '5px'
+                      marginRight: "5px",
                     }}
                   />
                   <span style={{ fontSize: "18px", fontWeight: "500" }}>
@@ -257,7 +263,7 @@ const CardCategory = () => {
                     alt="category"
                     style={{
                       width: "15%",
-                      marginRight: '5px'
+                      marginRight: "5px",
                     }}
                   />
                   <span style={{ fontSize: "18px", fontWeight: "500" }}>
@@ -292,7 +298,7 @@ const CardCategory = () => {
                     alt="category"
                     style={{
                       width: "16%",
-                      marginRight: '5px'
+                      marginRight: "5px",
                     }}
                   />
                   <span style={{ fontSize: "18px", fontWeight: "500" }}>
