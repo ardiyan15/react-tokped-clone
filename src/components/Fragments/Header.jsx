@@ -5,6 +5,7 @@ import HeaderProduct from "./HeaderProduct";
 
 import "../../styles/components/header.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Header = () => {
   const isFocused = useSelector((state) => state.focused.status);
   const isScroll = useSelector((state) => state.focused.isScroll);
@@ -12,11 +13,13 @@ const Header = () => {
   return (
     <>
       <div className="d-flex w-100 bg-white">
-        <img
-          src="/images/logo_tokped.svg"
-          alt="tokopedia-logo"
-          id="img-tokped"
-        />
+        <Link to={"/"}>
+          <img
+            src="/images/logo_tokped.svg"
+            alt="tokopedia-logo"
+            id="img-tokped"
+          />
+        </Link>
         <i className="bi bi-airplane-engines-fill"></i>
         <p id="category">Kategori</p>
         <div className="d-flex w-100">
@@ -47,9 +50,7 @@ const Header = () => {
                 <li>Meja Belajar</li>
               </ul>
             </div>
-            {(isScroll >= 1400 && isScroll <= 1900) && (
-              <HeaderProduct />
-            )}
+            {isScroll >= 1400 && isScroll <= 1900 && <HeaderProduct />}
           </div>
 
           <div className="mt-4 d-flex" style={{ marginRight: "-15%" }}>
