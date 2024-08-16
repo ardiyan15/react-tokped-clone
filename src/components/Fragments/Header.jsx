@@ -85,7 +85,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <hr id="hr" />
+      {isScroll == 0 && <hr id="hr" />}
     </>
   );
 };

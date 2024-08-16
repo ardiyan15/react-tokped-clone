@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Layouts/Navbar";
 import Header from "../components/Fragments/Header";
 import DetailCategory from "../components/Fragments/DetailCategory";
+import Footer from "../components/Fragments/Footer";
 import { setIsScroll } from "../redux/slices/focusedSlice";
 
 const Category = () => {
@@ -50,31 +51,39 @@ const Category = () => {
       <div className={isScroll > 0 ? "fixed-top shadow" : ""}>
         <Navbar />
         <Header />
-        <div className="content-body">
-          <div className="d-flex">
-            <h3>Direktodi Menurut</h3>
-            <div
-              style={{
-                border: "1px solid #dee2e6",
-                marginLeft: "10px",
-                paddingRight: "10px",
-                paddingLeft: "10px",
-              }}
-              className="d-flex justify-content-center align-items-center"
-            >
-              <span style={{ fontSize: "18px" }}>Kategori</span>
-            </div>
-          </div>
+      </div>
+
+      <div className="content-body pb-5">
+        <div className="d-flex">
+          <h3>Direktodi Menurut</h3>
           <div
-            style={{ marginLeft: "4%" }}
-            className="d-flex justify-content-between w-75"
+            style={{
+              border: "1px solid #dee2e6",
+              marginLeft: "10px",
+              paddingRight: "10px",
+              paddingLeft: "10px",
+            }}
+            className="d-flex justify-content-center align-items-center"
           >
-            {alphabets.map((alphabet, index) => (
-              <span key={index}>{alphabet}</span>
-            ))}
+            <span style={{ fontSize: "18px" }}>Kategori</span>
           </div>
-          <DetailCategory />
         </div>
+        <div
+          style={{ marginLeft: "4%" }}
+          className="d-flex justify-content-between w-75"
+        >
+          {alphabets.map((alphabet, index) => (
+            <span key={index}>{alphabet}</span>
+          ))}
+        </div>
+        <DetailCategory />
+      </div>
+
+      <hr className="hr w-100"/>
+
+
+      <div className="content-body">
+        <Footer />
       </div>
     </>
   );
