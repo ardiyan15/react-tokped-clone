@@ -1,3 +1,12 @@
 .border-secondary {
     border: 1px solid #dee2e6;
 }   
+
+.active {
+    font-weight: bold;
+    color: #00AA5B !important;
+}
+
+.active-li {
+    border-bottom: 3px solid #00AA5B;
+}
