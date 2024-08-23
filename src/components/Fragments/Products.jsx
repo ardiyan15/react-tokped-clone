@@ -7,9 +7,10 @@ import "../../styles/components/fragments/product.css";
 import { products } from "../../data/products/products.json";
 import { promos } from "../../data/promo/promos.json";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Products = () => {
-  const [isActive, setIsActive] = useState('Promo')
+  const [isActive, setIsActive] = useState("Promo");
   const currencyFormatter = (price) => {
     return price.toLocaleString("id-ID", {
       style: "currency",
@@ -20,9 +21,9 @@ const Products = () => {
   };
 
   const handlingProductNavigator = (e, nameSection) => {
-    e.preventDefault()
-    setIsActive(nameSection)
-  }
+    e.preventDefault();
+    setIsActive(nameSection);
+  };
 
   return (
     <>
@@ -37,7 +38,7 @@ const Products = () => {
             <Card.Body>
               <Card.Text>
                 <span>{product.title}</span>
-                <h5>{currencyFormatter(product.price)}</h5>
+                <span>{currencyFormatter(product.price)}</span>
                 <span style={{ color: "#AAB4C8" }}>
                   <del>{currencyFormatter(product.price)}</del>
                 </span>
@@ -111,32 +112,67 @@ const Products = () => {
               fontWeight: "600",
             }}
           >
-            <li className={isActive === 'Promo' ? 'active-li' : ''} onClick={(e) => handlingProductNavigator(e, 'Promo')}>
-              <a className={isActive === 'Promo' ? 'active' : ''} href="">Promo</a>
+            <li onClick={(e) => handlingProductNavigator(e, "Promo")}>
+              <a className={isActive === "Promo" ? "active" : ""} href="">
+                Promo
+              </a>
+
+              {isActive === "Promo" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li className={isActive === 'Tiket Pesawat' ? 'active-li' : ''} onClick={(e) => handlingProductNavigator(e, 'Tiket Pesawat')}>
-              <a className={isActive === 'Tiket Pesawat' ? 'active' : ''} href="">Tiket Pesawat</a>
+            <li onClick={(e) => handlingProductNavigator(e, "Tiket Pesawat")}>
+              <a
+                className={isActive === "Tiket Pesawat" ? "active" : ""}
+                href=""
+              >
+                Tiket Pesawat
+              </a>
+              {isActive === "Tiket Pesawat" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Tiket Kereta")}>
               <a href="">Tiket Kereta</a>
+              {isActive === "Tiket Kereta" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Hotel")}>
               <a href="">Hotel</a>
+              {isActive === "Hotel" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Kartu Prakerja")}>
               <a href="">Kartu Prakerja</a>
+              {isActive === "Kartu Prakerja" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Food & Voucher")}>
               <a href="">Food & Voucher</a>
+              {isActive === "Food & Voucher" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Produk Digital")}>
               <a href="">Produk Digital</a>
+              {isActive === "Produk Digital" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Fintech")}>
               <a href="">Fintech</a>
+              {isActive === "Fintech" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
-            <li>
+            <li onClick={(e) => handlingProductNavigator(e, "Tokopedia Salam")}>
               <a href="">Tokopedia Salam</a>
+              {isActive === "Tokopedia Salam" && (
+                <motion.div layoutId="indicator" className="active-li" />
+              )}
             </li>
           </ul>
           <div className="d-flex justify-content-between flex-wrap w-100">
