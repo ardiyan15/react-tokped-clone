@@ -6,9 +6,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/components/fragments/cardcategory.css";
 import { Link } from "react-router-dom";
-// import "../../styles/main.css"
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const CardCategory = () => {
+
+  const [activeCategory, setActiveCategory] = useState('pulsa')
+
   const settings = {
     accessibility: true,
     dots: false,
@@ -17,6 +21,11 @@ const CardCategory = () => {
     slidesToShow: 4,
     slideToScroll: 1,
   };
+
+  const cardCategoryNavigator = (e, typeCategory) => {
+    e.preventDefault()
+    setActiveCategory(typeCategory)
+  }
 
   return (
     <div className="w-100 mt-4">
@@ -121,19 +130,20 @@ const CardCategory = () => {
                     }}
                     className="d-flex justify-content-around list-inline"
                   >
-                    <li
-                      className="w-100 text-center"
-                      style={{
-                        fontWeight: "bold",
-                        color: "#00AA5B",
-                        borderBottom: "3px solid #00AA5B",
-                      }}
-                    >
-                      Pulsa
+                    <li className="w-100 text-center">
+                      <a href="" className={activeCategory === 'pulsa' ? 'active-category': ''} onClick={(e) => cardCategoryNavigator(e, 'pulsa')}>Pulsa</a>
+                      {activeCategory === 'pulsa' && <motion.div layoutId="indicator" style={{ backgroundColor: '#00AA5B', width: '100%', height: '8%' }} className="mt-1" />}
                     </li>
-                    <li className="w-100 text-center">Paket Data</li>
-                    <li className="w-100 text-center">Flight</li>
-                    <li className="w-100 text-center">Listrik PLN</li>
+                    <li className="w-100 text-center">
+                      <a href="" className={activeCategory === 'paket data' ? 'active-category': ''} onClick={(e) => cardCategoryNavigator(e, 'paket data')}>Paket Data</a>
+                      {activeCategory === 'paket data' && <motion.div layoutId="indicator" style={{ backgroundColor: '#00AA5B', width: '100%', height: '8%' }} className="mt-1" />}
+                    </li>
+                    <li className="w-100 text-center">
+                      <a href="">Flight</a>
+                    </li>
+                    <li className="w-100 text-center">
+                      <a href="">Listrik PLN</a>
+                    </li>
                     <li>
                       <Icon
                         className="align-self-center"

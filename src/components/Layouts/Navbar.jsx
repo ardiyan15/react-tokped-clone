@@ -1,12 +1,23 @@
+import { useState } from "react";
 import "../../styles/main.css";
 import "../../styles/navbar.css"
 
-const Navbar = (props) => {
+const Navbar = () => {
+  const [currentState, setCurrentState] = useState(false)
+  const handlingCardDownload = (type) => {
+    console.log(type)
+    if(type === 'enter') {
+      setCurrentState(true)
+    } else {
+      setCurrentState(false)
+    }
+  }
+
   return (
     <div className="navbar">
       <div className="row col-md-12">
-        <div className="col-md-6 flex">
-          <p style={{ marginLeft: '50px' }}>
+        <div className="col-md-6 flex"  onMouseEnter={() => handlingCardDownload('enter')} onMouseLeave={() => handlingCardDownload('leave')}>
+          <p style={{ marginLeft: '50px' }}  onMouseEnter={() => handlingCardDownload('enter')} onMouseLeave={() => handlingCardDownload('leave')}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -19,7 +30,17 @@ const Navbar = (props) => {
               <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
               <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
             </svg>
-            <span className="navbar-font">Download Tokopedia App</span>
+            <a className="navbar-font">Download Tokopedia App</a>
+            <div onMouseEnter={() => handlingCardDownload('enter')} onMouseLeave={() => handlingCardDownload('leave')} className={currentState === false ? "d-none" : "shadow rounded p-5 d-flex justify-content-around"} id="download-tokped-app" style={{ backgroundColor: 'white', position: 'absolute', zIndex: 999 }}>
+              <div> 
+              <img src="/images/navbar/qrcode-tokped.png" alt="qrcode" />
+              </div>
+              <div className="d-flex flex-column justify-content-center align-items-center" style={{ marginLeft: '10%' }}>
+                <p className="text-center" style={{ fontSize: '17px', fontWeight: '600' }}>Scan this QR or download app from:</p>
+                <img src="/images/navbar/play-store.png" alt="play-store" style={{ width: '50%' }} className="rounded mb-3"/>
+                <img src="/images/navbar/app-store.png" alt="app-store" style={{ width: '50%' }}/>
+              </div>
+            </div>
           </p>
         </div>
         <div className="col-md-6">

@@ -5,3 +5,8 @@
 .border-category {
     border: 1px solid #dee2e6;
 }
+
+.active-category {
+    font-weight: bold;
+    color: #00AA5B !important;
+}

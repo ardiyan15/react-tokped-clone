@@ -1,3 +1,17 @@
+/* #download-tokped-app {
+    display: none !important;
+} */
+
 .navbar-font {
+    height: 100% !important;
     font-size: 15px;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.navbar-font:hover {
+    color: #00AA5B;
+    cursor: pointer;
+    /* display: block; */
 }

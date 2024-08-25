@@ -5,12 +5,61 @@ import Button from "../Elements/Button/Index";
 import "../../styles/components/fragments/product.css";
 
 import { products } from "../../data/products/products.json";
-import { promos } from "../../data/promo/promos.json";
+import itemCategoryProduct from "../../data/promo/promos.json";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Products = () => {
+  const tabProductCategory = [
+    {
+      id: 1,
+      name: "Promo",
+      code: "promos",
+    },
+    {
+      id: 2,
+      name: "Tiket Pesawat",
+      code: "flight_tickets",
+    },
+    {
+      id: 3,
+      name: "Tiket Kereta",
+      code: "lorem1",
+    },
+    {
+      id: 4,
+      name: "Hotel",
+      code: "lorem1",
+    },
+    {
+      id: 5,
+      name: "Kartu Prakerja",
+      code: "lorem1",
+    },
+    {
+      id: 5,
+      name: "Food & Voucher",
+      code: "lorem1",
+    },
+    {
+      id: 6,
+      name: "Product Digital",
+      code: "lorem1",
+    },
+    {
+      id: 7,
+      name: "Fintech",
+      code: "lorem1",
+    },
+    {
+      id: 8,
+      name: "Tokopedia Salam",
+      code: "lorem1",
+    },
+  ];
+
   const [isActive, setIsActive] = useState("Promo");
+  const [itemTabCategory, setItemTabCategory] = useState(itemCategoryProduct['promos']);
   const currencyFormatter = (price) => {
     return price.toLocaleString("id-ID", {
       style: "currency",
@@ -20,9 +69,10 @@ const Products = () => {
     });
   };
 
-  const handlingProductNavigator = (e, nameSection) => {
+  const handlingProductNavigator = (e, nameSection, codeItem) => {
     e.preventDefault();
     setIsActive(nameSection);
+    setItemTabCategory(itemCategoryProduct[codeItem]);
   };
 
   return (
@@ -112,71 +162,23 @@ const Products = () => {
               fontWeight: "600",
             }}
           >
-            <li onClick={(e) => handlingProductNavigator(e, "Promo")}>
-              <a className={isActive === "Promo" ? "active" : ""} href="">
-                Promo
-              </a>
-
-              {isActive === "Promo" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Tiket Pesawat")}>
-              <a
-                className={isActive === "Tiket Pesawat" ? "active" : ""}
-                href=""
+            {tabProductCategory.map((item) => (
+              <li
+                key={item.id}
               >
-                Tiket Pesawat
-              </a>
-              {isActive === "Tiket Pesawat" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Tiket Kereta")}>
-              <a href="">Tiket Kereta</a>
-              {isActive === "Tiket Kereta" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Hotel")}>
-              <a href="">Hotel</a>
-              {isActive === "Hotel" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Kartu Prakerja")}>
-              <a href="">Kartu Prakerja</a>
-              {isActive === "Kartu Prakerja" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Food & Voucher")}>
-              <a href="">Food & Voucher</a>
-              {isActive === "Food & Voucher" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Produk Digital")}>
-              <a href="">Produk Digital</a>
-              {isActive === "Produk Digital" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Fintech")}>
-              <a href="">Fintech</a>
-              {isActive === "Fintech" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
-            <li onClick={(e) => handlingProductNavigator(e, "Tokopedia Salam")}>
-              <a href="">Tokopedia Salam</a>
-              {isActive === "Tokopedia Salam" && (
-                <motion.div layoutId="indicator" className="active-li" />
-              )}
-            </li>
+                <a className={isActive === item.name ? "active" : ""} href="" onClick={(e) =>
+                  handlingProductNavigator(e, item.name, item.code)
+                }>
+                  {item.name}
+                </a>
+                {isActive === item.name && (
+                  <motion.div layoutId="indicator" className="active-li" />
+                )}
+              </li>
+            ))}
           </ul>
           <div className="d-flex justify-content-between flex-wrap w-100">
-            {promos.map((subPromo, subPromoIndex) => (
+            {itemTabCategory.map((subPromo, subPromoIndex) => (
               <div
                 key={subPromoIndex}
                 className="w-100 d-flex justify-content-between border-bottom p-2"
