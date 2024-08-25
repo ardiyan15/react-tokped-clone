@@ -5,7 +5,6 @@ import "../../styles/navbar.css"
 const Navbar = () => {
   const [currentState, setCurrentState] = useState(false)
   const handlingCardDownload = (type) => {
-    console.log(type)
     if(type === 'enter') {
       setCurrentState(true)
     } else {
