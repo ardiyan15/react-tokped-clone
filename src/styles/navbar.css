@@ -1,6 +1,6 @@
-/* #download-tokped-app {
-    display: none !important;
-} */
+#download-tokped-app {
+    margin-top: -1.5px;
+}
 
 .navbar-font {
     height: 100% !important;
