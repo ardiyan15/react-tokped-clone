@@ -10,3 +10,14 @@
     font-weight: bold;
     color: #00AA5B !important;
 }
+
+.card-category-font-size {
+    font-size: 0.8vw;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1600px) {
+    .card-category-font-size {  
+        font-size: 1vw;
+    }
+}

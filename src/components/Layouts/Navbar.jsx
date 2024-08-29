@@ -5,7 +5,6 @@ import "../../styles/navbar.css"
 const Navbar = () => {
   const [currentState, setCurrentState] = useState(false)
   const handlingCardDownload = (type) => {
-    console.log(type)
     if(type === 'show') {
       setCurrentState(true)
     } else {
@@ -15,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="row col-md-12">
+      <div className="row col-md-12 d-flex align-items-center">
         <div className="col-md-6 flex">
           <p style={{ marginLeft: '50px' }}>
             <svg

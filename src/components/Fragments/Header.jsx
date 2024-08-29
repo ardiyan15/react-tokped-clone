@@ -23,8 +23,8 @@ const Header = () => {
         <i className="bi bi-airplane-engines-fill"></i>
         <p id="category">Kategori</p>
         <div className="d-flex w-100">
-          <div style={{ width: "78%" }}>
-            <div className="w-100 d-flex">
+          <div className="search-header-container">
+            <div className="d-flex" style={{ width: "100%" }}>
               <div
                 id={`${isFocused ? "border-focus" : ""}`}
                 className="d-flex justify-content-center align-self-center border-icon"
@@ -57,8 +57,12 @@ const Header = () => {
             <div className="pipe-separator"></div>
             <div className="d-flex flex-column button-container">
               <div className="d-flex">
-                <Button classname="btn btn-secondary btn-login">Masuk</Button>
-                <Button classname="btn btn-primary">Daftar</Button>
+                <Link to={"/login"} className="btn-login">
+                  <Button classname="btn btn-secondary">Masuk</Button>
+                </Link>
+                <Link to={"/register"}>
+                  <Button classname="btn btn-primary">Daftar</Button>
+                </Link>
               </div>
               <div className="d-flex mt-4">
                 <p style={{ width: "250px" }}>

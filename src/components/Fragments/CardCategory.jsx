@@ -204,7 +204,7 @@ const CardCategory = () => {
                         marginRight: "5px",
                       }}
                     />
-                    <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                    <span className="card-category-font-size">
                       Kategori
                     </span>
                   </div>
@@ -223,7 +223,7 @@ const CardCategory = () => {
                       marginRight: "5px",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Handphone & Tablet
                   </span>
                 </div>
@@ -240,7 +240,7 @@ const CardCategory = () => {
                       width: "15%",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Top-Up & Tagihan
                   </span>
                 </div>
@@ -258,7 +258,7 @@ const CardCategory = () => {
                       marginRight: "5px",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Elektronik
                   </span>
                 </div>
@@ -276,7 +276,7 @@ const CardCategory = () => {
                       marginRight: "5px",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Perawatan Hewan
                   </span>
                 </div>
@@ -293,7 +293,7 @@ const CardCategory = () => {
                       width: "13%",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Travel & Entertainment
                   </span>
                 </div>
@@ -311,7 +311,7 @@ const CardCategory = () => {
                       marginRight: "5px",
                     }}
                   />
-                  <span style={{ fontSize: "18px", fontWeight: "500" }}>
+                  <span className="card-category-font-size">
                     Keuangan
                   </span>
                 </div>

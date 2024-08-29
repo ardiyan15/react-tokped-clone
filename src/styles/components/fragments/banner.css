@@ -5,3 +5,8 @@
 .image-caraousel {
     width: 100%;
 }
+
+.margin-banner {
+    margin-top: 20%;
+    /* transition: all 500ms; */
+}

@@ -1,12 +1,15 @@
 import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import "../../styles/components/fragments/banner.css";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+  const isScroll = useSelector((state) => state.focused.isScroll);
+
   return (
     <Fragment>
-      <Carousel className="caraousel-container">
+      <Carousel className={`caraousel-container ${isScroll > 0 ? "margin-banner" : ""}`}>
         <Carousel.Item interval={1000}>
           <Link to={"/product"}>
             <img

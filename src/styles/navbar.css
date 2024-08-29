@@ -2,9 +2,15 @@
     margin-top: -1.5px;
 }
 
+.navbar {
+    background-color: #F0F3F7;
+    height: 2vw;
+}
+
 .navbar-font {
     height: 100% !important;
-    font-size: 15px;
+    /* font-size: 15px; */
+    font-size: 0.7vw;
     text-decoration: none;
     color: black;
     margin-left: 10px;
@@ -13,5 +19,4 @@
 .navbar-font:hover {
     color: #00AA5B;
     cursor: pointer;
-    /* display: block; */
 }

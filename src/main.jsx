@@ -9,6 +9,8 @@ import store from "./redux/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import './index.css'
 import "bootstrap/dist/css/bootstrap.min.css";
+import Register from "./pages/register.jsx";
+import Login from "./pages/login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
     path: "/category",
     element: <Category />,
   },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <>
       <div className={isScroll > 0 ? "fixed-top shadow" : ""}>
-        <Navbar test="TEst Data"/>
+        <Navbar />
         <Header />
       </div>
       <div className="content-body">
