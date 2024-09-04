@@ -4,13 +4,14 @@
 
 .navbar {
     background-color: #F0F3F7;
-    height: 2vw;
+    /* height: 2vw; */
+    height: 2.5rem;
 }
 
 .navbar-font {
     height: 100% !important;
-    /* font-size: 15px; */
-    font-size: 0.7vw;
+    font-size: 0.8rem;
+    /* font-size: 0.7vw; */
     text-decoration: none;
     color: black;
     margin-left: 10px;
