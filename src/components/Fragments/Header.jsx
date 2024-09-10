@@ -57,9 +57,9 @@ const Header = () => {
             <div className="pipe-separator"></div>
             <div className="d-flex flex-column button-container">
               <div className="d-flex">
-                <Link to={"/login"} className="btn-login">
-                  <Button classname="btn btn-secondary">Masuk</Button>
-                </Link>
+                {/* <Link to={"/login"} className="btn-login"> */}
+                  <Button onClick={() => {console.log('test')}} classname="btn btn-secondary btn-login">Masuk</Button>
+                {/* </Link> */}
                 <Link to={"/register"}>
                   <Button classname="btn btn-primary">Daftar</Button>
                 </Link>

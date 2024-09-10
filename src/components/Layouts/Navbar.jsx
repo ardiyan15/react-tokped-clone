@@ -4,6 +4,7 @@ import "../../styles/navbar.css"
 
 const Navbar = () => {
   const [currentState, setCurrentState] = useState(false)
+
   const handlingCardDownload = (type) => {
     if(type === 'show') {
       setCurrentState(true)
@@ -16,7 +17,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="row col-md-12 d-flex align-items-center">
         <div className="col-md-6 flex">
-          <p style={{ marginLeft: '50px' }}>
+          <div style={{ marginLeft: '50px', marginTop: '-1em' }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -40,7 +41,7 @@ const Navbar = () => {
                 <img src="/images/navbar/app-store.png" alt="app-store" style={{ width: '50%' }}/>
               </div>
             </div>
-          </p>
+          </div>
         </div>
         <div className="col-md-6">
           <ul className="p-0 d-flex list-inline justify-content-around navbar-font">

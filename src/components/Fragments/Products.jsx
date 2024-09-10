@@ -37,22 +37,22 @@ const Products = () => {
       code: "lorem1",
     },
     {
-      id: 5,
+      id: 6,
       name: "Food & Voucher",
       code: "lorem1",
     },
     {
-      id: 6,
+      id: 7,
       name: "Product Digital",
       code: "lorem1",
     },
     {
-      id: 7,
+      id: 8,
       name: "Fintech",
       code: "lorem1",
     },
     {
-      id: 8,
+      id: 9,
       name: "Tokopedia Salam",
       code: "lorem1",
     },
