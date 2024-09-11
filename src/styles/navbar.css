@@ -4,13 +4,22 @@
 
 .navbar {
     background-color: #F0F3F7;
+<<<<<<< HEAD
+=======
+    /* height: 2vw; */
+>>>>>>> 17d29f02d5678d5b7a709bd768729b89eb3089d9
     height: 2.5rem;
 }
 
 .navbar-font {
     height: 100% !important;
+<<<<<<< HEAD
     /* font-size: 15px; */
     font-size: 1rem;
+=======
+    font-size: 0.8rem;
+    /* font-size: 0.7vw; */
+>>>>>>> 17d29f02d5678d5b7a709bd768729b89eb3089d9
     text-decoration: none;
     color: black;
     margin-left: 10px;
