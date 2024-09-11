@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -17,6 +17,7 @@ import Footer from "../components/Fragments/Footer";
 
 
 const Home = () => {
+  const refContainer = useRef()
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
 
@@ -25,6 +26,8 @@ const Home = () => {
       dispatch(setIsScroll(window.scrollY));
     });
   }, [isScroll]);
+
+  console.log(isScroll)
 
   return (
     <>

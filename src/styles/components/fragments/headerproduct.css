@@ -1,10 +1,15 @@
 .card-header-product {
     width: 13vw;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
+}
+
+.card-header-product-on-scroll {
+    width: 10rem;
+    font-size: 0.8rem;
 }
 
 @media screen and (max-width: 1600px) {
     .card-header-product {
-        width: 10vw;
+        width: 17rem;
     }
 }

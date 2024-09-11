@@ -50,7 +50,7 @@ const Header = () => {
                 <li>Meja Belajar</li>
               </ul>
             </div>
-            {isScroll >= 1400 && isScroll <= 1900 && <HeaderProduct />}
+            {isScroll >= 1700 && isScroll <= 1900 && <HeaderProduct />}
           </div>
 
           <div className="mt-4 d-flex" style={{ marginRight: "-15%" }}>
