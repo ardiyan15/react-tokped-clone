@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setIsScroll } from "../redux/slices/focusedSlice";
@@ -14,10 +13,9 @@ import Trend from "../components/Fragments/Trend";
 import "../styles/pages/home.css";
 import Products from "../components/Fragments/Products";
 import Footer from "../components/Fragments/Footer";
-
+import ModalLogin from "../components/Fragments/ModalLogin";
 
 const Home = () => {
-  const refContainer = useRef()
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
 
@@ -26,8 +24,6 @@ const Home = () => {
       dispatch(setIsScroll(window.scrollY));
     });
   }, [isScroll]);
-
-  console.log(isScroll)
 
   return (
     <>
@@ -40,6 +36,7 @@ const Home = () => {
         <CardCategory />
         <Promo />
         <Trend />
+        <ModalLogin />
       </div>
       <div>
         <div className="product-separator"></div>

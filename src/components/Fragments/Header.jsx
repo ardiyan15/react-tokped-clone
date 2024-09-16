@@ -1,14 +1,22 @@
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { Icon } from "../Elements/Icon/Icon";
 import Button from "../Elements/Button/Index";
 import Input from "../Elements/Input/Index";
 import HeaderProduct from "./HeaderProduct";
 
+import { setShow } from "../../redux/slices/showModal";
+
 import "../../styles/components/header.css";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 const Header = () => {
   const isFocused = useSelector((state) => state.focused.status);
   const isScroll = useSelector((state) => state.focused.isScroll);
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    dispatch(setShow(true));
+  };
 
   return (
     <>
@@ -58,7 +66,12 @@ const Header = () => {
             <div className="d-flex flex-column button-container">
               <div className="d-flex">
                 {/* <Link to={"/login"} className="btn-login"> */}
-                  <Button onClick={() => {console.log('test')}} classname="btn btn-secondary btn-login">Masuk</Button>
+                <Button
+                  buttonHandler={handleLogin}
+                  classname="btn btn-secondary btn-login"
+                >
+                  Masuk
+                </Button>
                 {/* </Link> */}
                 <Link to={"/register"}>
                   <Button classname="btn btn-primary">Daftar</Button>
