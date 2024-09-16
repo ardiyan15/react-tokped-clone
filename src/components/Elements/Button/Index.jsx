@@ -1,15 +1,21 @@
 const Button = (props) => {
-  const { children, classname, customStyle, buttonHandler } = props;
+  const { children, classname, customStyle, buttonHandler, isdisabled } = props;
+
+  let isDisabled = isdisabled;
+
+  if(isdisabled === undefined) {
+    isDisabled = false
+  }
 
   let button = (
-    <button className={classname} style={customStyle}>
+    <button disabled={isDisabled} className={classname} style={customStyle}>
       {children}
     </button>
   );
 
   if (buttonHandler) {
     button = (
-      <button onClick={buttonHandler} className={classname} style={customStyle}>
+      <button disabled={isDisabled} onClick={buttonHandler} className={classname} style={customStyle}>
         {children}
       </button>
     );

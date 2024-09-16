@@ -48,11 +48,12 @@
     border-top-right-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
     height: 45px;
-}
-
-.form-control {
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
+}
+
+.on-focus:focus {
+    border-color: #00AA5B !important;
 }
 
 #search-form:focus {
