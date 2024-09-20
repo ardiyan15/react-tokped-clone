@@ -31,7 +31,7 @@ const Header = () => {
         <i className="bi bi-airplane-engines-fill"></i>
         <p id="category">Kategori</p>
         <div className="d-flex w-100">
-          <div className="search-header-container">
+          <div className="search-header-container w-100">
             <div className="d-flex" style={{ width: "100%" }}>
               <div
                 id={`${isFocused ? "border-focus" : ""}`}
@@ -45,7 +45,11 @@ const Header = () => {
               </div>
               <Input id="search-form" />
               <div className="cart-container d-flex justify-content-center">
-                <Icon className="align-self-center" iconName="Cart" size={25} />
+                <div className="d-flex justify-content-between">
+                  <Icon className="align-self-center" iconName="Cart" size={25} />
+                  <Icon className="align-self-center" iconName="Bell" size={25} />
+                  <Icon className="align-self-center" iconName="Envelope" size={25} />
+                </div>
               </div>
             </div>
             <div className="w-75 mt-3">

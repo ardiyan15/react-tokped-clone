@@ -1,4 +1,3 @@
-// import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -6,25 +5,62 @@ import { setShow } from "../../redux/slices/showModal";
 import { Fragment, useState } from "react";
 import Input from "../Elements/Input/Index";
 import Button from "../Elements/Button/Index";
+import Spinner from "../Elements/Spinner/Index";
+
+import { login } from "../../services/auth.service";
 
 import "../../styles/components/fragments/modal.css";
 import "../../styles/components/header.css";
 
 const ModalLogin = () => {
   const [isDisabled, setIsDisabled] = useState(true);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isCorrectLogin, setIsCorrectLogin] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const dispatch = useDispatch();
   const handleClose = () => {
     dispatch(setShow(false));
-    setIsDisabled(true)
+    setIsDisabled(true);
+    setIsCorrectLogin(true);
+    setUsername("");
+    setPassword("");
   };
   const isShow = useSelector((state) => state.setModal.isShow);
 
   const handleActiveButton = (event) => {
-    if (event.target.value.length >= 4) {
+    const { name, value } = event.target;
+    if (name === "username") {
+      setUsername(value);
+    }
+
+    if (name === "password") {
+      setPassword(value);
+    }
+
+    if (value !== "" && (name === "username" ? password : username) !== "") {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
     }
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    setIsSubmit(true);
+
+    const data = { username, password };
+
+    login(data, (status, res) => {
+      if (status) {
+        console.log(status);
+        console.log(res);
+      } else {
+        setIsCorrectLogin(false);
+        setIsSubmit(false)
+      }
+    });
   };
 
   return (
@@ -39,34 +75,53 @@ const ModalLogin = () => {
           style={{ width: "350px", border: "0px solid #fff" }}
         ></Modal.Header>
         <Modal.Body>
-          <div className="row" style={{ marginBottom: "2rem" }}>
-            <div className="col-6">
-              <h4 className="font-weight-bold">Masuk</h4>
+          <form onSubmit={handleLogin}>
+            <div className="row" style={{ marginBottom: "2rem" }}>
+              <div className="col-6">
+                <h4 className="font-weight-bold">Masuk</h4>
+              </div>
+              <div className="col-6 d-flex justify-content-end align-items-end">
+                <span className="align-self-end primary-color">Daftar</span>
+              </div>
             </div>
-            <div className="col-6 d-flex justify-content-end align-items-end">
-              <span className="align-self-end primary-color">Daftar</span>
+            {!isCorrectLogin && (
+              <p className="text-danger">Username atau Password salah!</p>
+            )}
+            <small>Username dan Password</small>
+            <Input
+              name="username"
+              placeholder="username"
+              customClass="on-focus mb-3"
+              onchange={handleActiveButton}
+              isFocus={isShow}
+            />
+
+            <Input
+              name="password"
+              placeholder="password"
+              customClass="on-focus"
+              onchange={handleActiveButton}
+            />
+            <div className="w-100">
+              <p className="text-end primary-color">Butuh Bantuan?</p>
             </div>
-          </div>
-          <small>Nomor HP atau Email</small>
-          <Input
-            placeholder=""
-            customClass="on-focus"
-            onchange={handleActiveButton}
-            isFocus={isShow}
-          />
-          <div className="w-100">
-            <p className="text-end primary-color">Butuh Bantuan?</p>
-          </div>
-          <div className="w-100">
-            <Button
-              classname={`w-100 btn  ${
-                isDisabled ? "btn-disabled" : "btn-primary"
-              }`}
-              isdisabled={isDisabled}
-            >
-              Masuk
-            </Button>
-          </div>
+            <div className="w-100">
+              {isSubmit ? (
+                <div className="text-center w-100">
+                  <Spinner />
+                </div>
+              ) : (
+                <Button
+                  classname={`w-100 btn  ${
+                    isDisabled ? "btn-disabled" : "btn-primary"
+                  }`}
+                  isdisabled={isDisabled}
+                >
+                  Masuk
+                </Button>
+              )}
+            </div>
+          </form>
         </Modal.Body>
         <Modal.Footer
           style={{
