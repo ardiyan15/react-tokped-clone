@@ -1,22 +1,26 @@
-// import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setShow } from "../../redux/slices/showModal";
-import { Fragment, useState } from "react";
+import { Fragment, startTransition, useState } from "react";
 import Input from "../Elements/Input/Index";
 import Button from "../Elements/Button/Index";
+import { login } from "../../redux/slices/authSlice";
 
 import "../../styles/components/fragments/modal.css";
 import "../../styles/components/header.css";
 
 const ModalLogin = () => {
   const [isDisabled, setIsDisabled] = useState(true);
+  const [loginId, setLoginId] = useState("");
+
   const dispatch = useDispatch();
   const handleClose = () => {
     dispatch(setShow(false));
-    setIsDisabled(true)
+    setIsDisabled(true);
+    setLoginId("");
   };
+
   const isShow = useSelector((state) => state.setModal.isShow);
 
   const handleActiveButton = (event) => {
@@ -25,6 +29,16 @@ const ModalLogin = () => {
     } else {
       setIsDisabled(true);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isDisabled) return;
+
+    startTransition(() => {
+      dispatch(login({ loginId }));
+      handleClose();
+    });
   };
 
   return (
@@ -39,34 +53,36 @@ const ModalLogin = () => {
           style={{ width: "350px", border: "0px solid #fff" }}
         ></Modal.Header>
         <Modal.Body>
-          <div className="row" style={{ marginBottom: "2rem" }}>
-            <div className="col-6">
-              <h4 className="font-weight-bold">Masuk</h4>
+          <form onSubmit={handleSubmit}>
+            <div className="row" style={{ marginBottom: "2rem" }}>
+              <div className="col-6">
+                <h4 className="font-weight-bold">Masuk</h4>
+              </div>
+              <div className="col-6 d-flex justify-content-end align-items-end">
+                <span className="align-self-end primary-color">Daftar</span>
+              </div>
             </div>
-            <div className="col-6 d-flex justify-content-end align-items-end">
-              <span className="align-self-end primary-color">Daftar</span>
+            <small>Nomor HP atau Email</small>
+            <Input
+              placeholder=""
+              customClass="on-focus"
+              onchange={handleActiveButton}
+              isFocus={isShow}
+            />
+            <div className="w-100">
+              <p className="text-end primary-color">Butuh Bantuan?</p>
             </div>
-          </div>
-          <small>Nomor HP atau Email</small>
-          <Input
-            placeholder=""
-            customClass="on-focus"
-            onchange={handleActiveButton}
-            isFocus={isShow}
-          />
-          <div className="w-100">
-            <p className="text-end primary-color">Butuh Bantuan?</p>
-          </div>
-          <div className="w-100">
-            <Button
-              classname={`w-100 btn  ${
-                isDisabled ? "btn-disabled" : "btn-primary"
-              }`}
-              isdisabled={isDisabled}
-            >
-              Masuk
-            </Button>
-          </div>
+            <div className="w-100">
+              <Button
+                classname={`w-100 btn  ${
+                  isDisabled ? "btn-disabled" : "btn-primary"
+                }`}
+                isdisabled={isDisabled}
+              >
+                Masuk
+              </Button>
+            </div>
+          </form>
         </Modal.Body>
         <Modal.Footer
           style={{
