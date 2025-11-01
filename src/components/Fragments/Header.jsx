@@ -15,8 +15,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
 
-  console.log(isAuthenticated);
-
   const handleLogin = () => {
     dispatch(setShow(true));
   };
