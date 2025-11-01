@@ -13,6 +13,9 @@ const Header = () => {
   const isFocused = useSelector((state) => state.focused.status);
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+
+  console.log(isAuthenticated);
 
   const handleLogin = () => {
     dispatch(setShow(true));
@@ -64,19 +67,28 @@ const Header = () => {
           <div className="mt-4 d-flex" style={{ marginRight: "-15%" }}>
             <div className="pipe-separator"></div>
             <div className="d-flex flex-column button-container">
-              <div className="d-flex">
-                {/* <Link to={"/login"} className="btn-login"> */}
-                <Button
-                  buttonHandler={handleLogin}
-                  classname="btn btn-secondary btn-login"
-                >
-                  Masuk
-                </Button>
-                {/* </Link> */}
-                <Link to={"/register"}>
-                  <Button classname="btn btn-primary">Daftar</Button>
-                </Link>
-              </div>
+              {isAuthenticated ? (
+                <div className="d-flex gap-3">
+                  <img
+                    src="/images/users/default-profile.jpg"
+                    alt="user-profile"
+                    style={{ width: 35, height: 35, borderRadius: "50%" }}
+                  />
+                  <span className="align-self-center">Ardiyan Agus</span>
+                </div>
+              ) : (
+                <div className="d-flex">
+                  <Button
+                    buttonHandler={handleLogin}
+                    classname="btn btn-secondary btn-login"
+                  >
+                    Masuk
+                  </Button>
+                  <Link to={"/register"}>
+                    <Button classname="btn btn-primary">Daftar</Button>
+                  </Link>
+                </div>
+              )}
               <div className="d-flex mt-4">
                 <p style={{ width: "250px" }}>
                   <Icon
