@@ -9,7 +9,7 @@ import HeaderProduct from "./HeaderProduct";
 import { setShow } from "../../redux/slices/showModal";
 
 import "../../styles/components/header.css";
-const Header = () => {
+const Header = ({ onProfileOpen, onProfileClose }) => {
   const isFocused = useSelector((state) => state.focused.status);
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const Header = () => {
             <div className="pipe-separator"></div>
             <div className="d-flex flex-column button-container">
               {isAuthenticated ? (
-                <div className="d-flex gap-3">
+                <div className="d-flex gap-3 rounded-3 profile-user w-75" onMouseEnter={onProfileOpen} onMouseLeave={onProfileClose}>
                   <img
                     src="/images/users/default-profile.jpg"
                     alt="user-profile"

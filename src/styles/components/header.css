@@ -120,6 +120,11 @@
     width: 60vw;
 }
 
+.profile-user:hover {
+    background-color: #F1F3F4;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1600px) {
     .search-header-container {
         width: 53vw;

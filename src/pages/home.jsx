@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setIsScroll } from "../redux/slices/focusedSlice";
@@ -14,8 +14,10 @@ import "../styles/pages/home.css";
 import Products from "../components/Fragments/Products";
 import Footer from "../components/Fragments/Footer";
 import ModalLogin from "../components/Fragments/ModalLogin";
+import Overlay from "../components/Elements/Overlay";
 
 const Home = () => {
+  const [showOverlay, setShowOverlay] = useState(false);
   const isScroll = useSelector((state) => state.focused.isScroll);
   const dispatch = useDispatch();
 
@@ -23,13 +25,47 @@ const Home = () => {
     window.addEventListener("scroll", () => {
       dispatch(setIsScroll(window.scrollY));
     });
-  }, [isScroll]);
+  }, [dispatch]);
 
   return (
     <>
-      <div className={isScroll > 0 ? "fixed-top shadow" : ""}>
+      {showOverlay && <Overlay />}
+      <div className={`site-header ${isScroll > 0 ? "fixed-top shadow" : ""}`}>
         <Navbar />
-        <Header />
+        <Header
+          onProfileOpen={() => setShowOverlay(true)}
+          onProfileClose={() => setShowOverlay(false)}
+        />
+        {/* {showOverlay && ( */}
+          <div
+            className="d-flex justify-content-end"
+            style={{ marginTop: "-4.5em" }}
+          >
+            <div className="card me-5" style={{ width: "20rem" }}>
+              <div className="card-body">
+                <div className="d-flex flex-column">
+                  <div className="gap-3 d-flex w-100 px-5 py-2 justify-content-start shadow rounded-2">
+                    <img
+                      src="/images/users/default-profile.jpg"
+                      alt="user-profile"
+                      style={{ width: 35, height: 35, borderRadius: "50%" }}
+                    />
+                    <span className="align-self-center">Ardiyan</span>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="justify-content-between d-flex">
+                        <span>PLUS</span>
+                        <a href="#" className="text-link-primary">Langganan</a>
+                      </div>
+                      <span className="font-weight-bold">Nikmati Gratis Ongkir Tanpa Batas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {/* )} */}
       </div>
       <div className="content-body">
         <Banner />
