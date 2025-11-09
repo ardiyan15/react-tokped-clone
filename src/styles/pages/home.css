@@ -57,3 +57,37 @@
         margin-right: 5%;
     }
 } 
+
+/* Container umum */
+.content-body { margin-inline: 15%; }
+@media (max-width: 1600px) {
+    .content-body { margin-inline: 5%; }
+}
+
+/* Warna/link utilitas contoh */
+.text-link-primary { color: #00AA5B !important; }
+
+/* Garis pemisah produk */
+.product-separator { margin: 20px 0; background: #F0F3F7; width: 100%; height: 10px; }
+.product-footer-separator { margin-bottom: 20px; background: #F0F3F7; width: 100%; height: 5px; }
+
+/* Tipografi area profile */
+.profile-info { font-size: 14px; }   /* akan diwariskan ke span/a kecuali di-override */
+
+/* Border kanan + bottom custom dengan gap kiri-kanan */
+.border-profile-info { position: relative; border-right: 1px solid silver; }
+.border-profile-info::after {
+    content: ""; position: absolute; left: 10px; right: 10px; bottom: 0;
+    height: 1px; background: silver;
+}
+
+/* Ukuran icon pembayaran konsisten */
+.image-payment { width: 20px; height: 20px; object-fit: contain; }
+
+/* Header fixed: pastikan full width & di atas overlay */
+.site-header { width: 100%; background: #fff; }
+
+.btn-link {
+    color: black !important;
+    text-decoration: none !important;
+}
