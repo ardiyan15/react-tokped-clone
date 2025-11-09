@@ -1,5 +1,4 @@
-// import Overlay from "./components/Elements/Overlay";
-import Home from "./pages/home";
+// import Overlay from "./compon
 import "./styles/main.css";
 
 function App() {

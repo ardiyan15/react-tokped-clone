@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <ul className="p-0 d-flex list-inline justify-content-around navbar-font">
+          <ul className="p-0 d-flex list-inline justify-content-end gap-3 navbar-font">
             <li>
               <a href="">Tentang Tokopedia</a>
             </li>

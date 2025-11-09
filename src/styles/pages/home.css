@@ -1,4 +1,4 @@
-.content-body {
+ .content-body {
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -22,6 +22,34 @@
     height: 5px;
 }
 
+.profile-info {
+    font-size: 14px;
+}
+
+.border-profile-info {
+    border-right: 1px solid silver;
+    position: relative; /* <-- wajib */
+}
+
+.border-profile-info::after {
+  content: "";
+  position: absolute;
+  left: 10px;   /* jarak dari kiri */
+  right: 10px;  /* jarak dari kanan */
+  bottom: 0;
+  height: 1px;
+  background: silver;
+}
+
+.border-profile-promo {
+    border-right: 1px solid silver;
+    position: relative; /* <-- wajib */
+}
+
+.image-payment {
+    width: 30px;
+    height: 30px;
+}
 
 @media screen and (max-width: 1600px) {
     .content-body {
