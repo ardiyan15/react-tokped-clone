@@ -1,4 +1,5 @@
 const ProfileOverlay = ({ onMouseEnter, onMouseLeave, top = 96, right = 20 }) => {
+    console.log('this will render twice')
     return (
     <div
       onMouseEnter={onMouseEnter}
